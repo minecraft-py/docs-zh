@@ -5,7 +5,7 @@ nav:
 
 theme: readthedocs
 
-copyright: Copyright &copy 8080 Minecraft-in-python<br>&nbsp;&nbsp;All Right Reserved.
+copyright: Copyright &copy 2020 Minecraft-in-python<br>&nbsp;&nbsp;All Right Reserved.
 
 markdown_extensions:
   - admonition
