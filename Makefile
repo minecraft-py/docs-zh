@@ -8,6 +8,6 @@ deploy: mkdocs.yml docs/
 
 deploy-docs: mkdocs.yml docs/
 	@echo [deploy...]
-	@cd docs/; mkdocs gh-deploy -m `date +%Y-%m-%d`
+	@mkdocs gh-deploy -m `date +%Y-%m-%d`
 	@rm site/ -rf
 	@echo [done]
