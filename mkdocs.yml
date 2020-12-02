@@ -2,8 +2,15 @@ site_name: Minecraft in python
 
 nav:
   - Home: index.md
+  - Installation: installation-guide.md
 
-theme: readthedocs
+theme:
+  name: readthedocs
+  highlightjs: true
+  hljs_languages:
+    - bash
+    - javascript
+    - python
 
 copyright: Copyright &copy 2020 Minecraft-in-python<br>&nbsp;&nbsp;All Right Reserved.
 
