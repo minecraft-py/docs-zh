@@ -29,4 +29,33 @@ First, you must consider where copy the files. There are 2 choices below:
 - Create a `MCPYPATH` environment variable
 
 ### install.py
-`install.py` is an auto-install script.
+`install.py` is an auto-install script. It do these things:
+
+1. Install requirements
+2. Register(the first time)
+3. Copy files
+
+> Double-click this file or type `./install.py` on terminal.
+
+### Register
+Register a player is very easy, it's an offline operation on terminal.
+
+Every player has it's own id which generate by `uuid` module.
+
+Player name is a string at least have 2 letters(the first one must be letters or underline).
+
+### How to play
+Double-click the `Minecraft.bat` file will start the launcher on Windows.
+
+On terminal, type `python -m Minecraft`.
+
+Or add this function to `~/.bashrc`:
+```bash
+function mcpy() {
+	cd ~/Minecraft
+	python -m Minecraft $*
+	cd $OLDPWD/
+}
+# or
+alias mcpy="cd ~/Minecraft && python -m Minecraft $* && cd $OLDPWD/"
+```
