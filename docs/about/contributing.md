@@ -18,3 +18,5 @@ Please include as much detail as you can. Let us know your platform and mcpy ver
 
 If the problem is visual (for example a texture or design issue) please add a screenshot and 
 if you get an error please include the full error and traceback.
+
+You can read our [issues list](https://minecraft-in-python.github.io/issues-list.html) first.
