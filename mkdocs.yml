@@ -3,6 +3,9 @@ site_name: Minecraft in python
 nav:
   - Home: index.md
   - Installation: installation-guide.md
+  - About:
+    - Contributing: about/contributing.md
+    - License: about/license.md
 
 theme:
   name: readthedocs

@@ -1,5 +1,5 @@
-# Document
-This is the offical document of Minecraft-in-python.
+# Documentation
+This is the offical documentation of Minecraft-in-python.
 
 Minecraft-in-python, abbreviation `mcpy`, is a Minecraft-like game, it's written in 100% pure python.
 
