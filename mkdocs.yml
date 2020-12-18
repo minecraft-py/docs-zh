@@ -2,7 +2,8 @@ site_name: Minecraft in python
 
 nav:
   - Home: index.md
-  - Installation: installation-guide.md
+  - Install resource: install-res.md
+  - Install game: install-game.md
   - About:
     - Contributing: about/contributing.md
     - License: about/license.md

@@ -1,5 +1,5 @@
-# Installation guide
-It's a brief guide on how to install mcpy.
+# Installation guide of game
+**You should first install resource package!**
 
 ## Download source code or git repository
 The source code of mcpy are stored in Github and Gitee.
@@ -36,6 +36,12 @@ First, you must consider where copy the files. There are 2 choices below:
 3. Copy files
 
 > Double-click this file or type `./install.py` on terminal.
+
+#### Commandline arguments
+
+- `--no-install-requirements` - Don't install requirements
+- `--hide-output` - Don't show anything when pip was ran
+- `--use-pip<n>` - Use pip version *n*
 
 ### Register
 Register a player is very easy, it's an offline operation on terminal.
