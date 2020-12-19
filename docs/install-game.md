@@ -1,5 +1,4 @@
 # Installation guide of game
-**You should first install resource package!**
 
 ## Download source code or git repository
 The source code of mcpy are stored in Github and Gitee.
