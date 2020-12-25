@@ -14,9 +14,9 @@ Contributions can be made in a number of ways, like:
 - And so on...
 
 ## Reporting an issues
-Please include as much detail as you can. Let us know your platform and mcpy version or commit date.
+Please include as much detail as you can. Let us know your platform, mcpy version and commit date.
 
 If the problem is visual (for example a texture or design issue) please add a screenshot and 
 if you get an error please include the full error and traceback.
 
-You can read our [issues list](https://minecraft-in-python.github.io/issues-list.html) first.
+You can read our [issues list](https://github.com/minecraft-in-python/Minecraft/issues) first.

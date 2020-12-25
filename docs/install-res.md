@@ -1,3 +1,5 @@
+**The zip file of resource pack is included in the 
+[Minecraft-in-python/Minecraft](https://github.com/Minecraft-in-python/Minecraft) repository!**
 # Installation guide of resource package
 Use git:
 ```bash
