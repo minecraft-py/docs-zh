@@ -2,6 +2,7 @@ site_name: Minecraft in python
 
 nav:
   - Home: index.md
+  - Launcher: launcher.md
   - Install resource: install-res.md
   - Install game: install-game.md
   - About:
