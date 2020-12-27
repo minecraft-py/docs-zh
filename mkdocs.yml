@@ -5,6 +5,9 @@ nav:
   - Launcher: launcher.md
   - Install resource: install-res.md
   - Install game: install-game.md
+  - Game:
+    - Create a world: game/new-world.md
+    - Control the player: game/control-player.md
   - About:
     - Contributing: about/contributing.md
     - License: about/license.md
