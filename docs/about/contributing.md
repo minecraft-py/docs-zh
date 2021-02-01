@@ -20,3 +20,11 @@ If the problem is visual (for example a texture or design issue) please add a sc
 if you get an error please include the full error and traceback.
 
 You can read our [issues list](https://github.com/minecraft-in-python/Minecraft/issues) first.
+
+## A call for attention
+This is a large, ambitious, open, professional, intellectual and grandiose project.
+
+Like all projects that fall into these categories together, it needs a lot of support and a lot of staff.
+Many people reading this who are in a position to help may not be able to do so because they are not aware
+of how to do so, if you want to help but don't know how, contact the mcpy team we can always find a space
+for those who want to lend a hand.

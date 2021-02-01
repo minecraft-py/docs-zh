@@ -1,5 +1,8 @@
 # Installation guide of game
-**Use launcher to install game is a wise choice!**
+Here's how to install the game.
+Please note that in the future you will be able to install it very,
+very easily from the launcher. But for now you should follow the steps indicated here.
+
 ## Download source code or git repository
 The source code of mcpy are stored in Github and Gitee.
 

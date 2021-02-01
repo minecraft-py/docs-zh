@@ -3,10 +3,10 @@ site_name: Minecraft in python
 nav:
   - Home: index.md
   - Launcher: launcher.md
-  - Install resource: install-res.md
+  - Install resource: pack-res.md
   - Install game: install-game.md
   - Game:
-    - Create a world: game/new-world.md
+    - Anout the world: game/world.md
     - Control the player: game/control-player.md
   - About:
     - Contributing: about/contributing.md
