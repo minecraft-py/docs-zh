@@ -8,10 +8,11 @@ the game would run and then fail. At the moment Minecraft-in-python is only
 provided with a resource bundle.
 
 The resource packs provide inside:
-* Textures
-* Language packages
-* Information about it
-* A nice icon (your logo).
+
+- Textures
+- Language packages
+- Information about it
+- A nice icon (your logo).
 
 In the future you will be able to use several resource packs, so if one does not
 provide languages and the other doesn't have textures.

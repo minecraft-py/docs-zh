@@ -11,7 +11,7 @@ of course, has Minecraft-in-python installed.
 
 2) Offline: You can play Minecraft-in-python alone.
 
-Personal note from @ismaelxyz: What I like about the offline game mode is
+Personal note from **@ismaelxyz**: What I like about the offline game mode is
 that I can  create things and see the results of my own effort and learning.
 
 ## The worlds
@@ -21,6 +21,7 @@ Worlds are the places where you will create things
 and do whatever activities you want. No rules, no laws, no limits. You dictate
 
 The intention of the world is to be:
-* Round: It starts where it ends and ends where it starts.
-* Random: Theoretically no two worlds will ever be the same, when initiated.
-* Multiplayer: It has several blocks before reaching the base stone.
+
+- Round: It starts where it ends and ends where it starts.
+- Random: Theoretically no two worlds will ever be the same, when initiated.
+- Multiplayer: It has several blocks before reaching the base stone.

@@ -1,7 +1,9 @@
 # Control the player
 
 ## Move
-Use `W`, `A`, `S`, `D` to walk, `SPACE` to jump. `TAB` to toggle fly mode(Just like Minecraft Java Edition).
+- `W`, `A`, `S`, `D` - Move
+- `SPACE`, `LSHIFT` - Jump or snake
+- Quickly press `W`, `SPACE` twice - Toggle run or fly
 
 ## Build & Destroy
 Left click to destroy (or attack) blocks, right click to build (or use) blocks.

@@ -6,7 +6,7 @@ nav:
   - Install resource: pack-res.md
   - Install game: install-game.md
   - Game:
-    - Anout the world: game/world.md
+    - About the world: game/world.md
     - Control the player: game/control-player.md
   - About:
     - Contributing: about/contributing.md
