@@ -26,6 +26,7 @@ unzip Minecraft.zip -d Minecraft
 First, you must consider where copy the files. There are 2 choices below:
 
 - Default
+	- MacOS, undee `~/Library/Application Support/mcpy`
 	- Windows, under `%HOME%\mcpy`
 	- UNIX, under `~/.mcpy`
 - Create a `MCPYPATH` environment variable
