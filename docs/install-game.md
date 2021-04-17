@@ -42,7 +42,7 @@ First, you must consider where copy the files. There are 2 choices below:
 
 #### Commandline arguments
 
-- `--no-install-requirements` - Don't install requirements
+- `--skip-install-requirements` - Don't install requirements
 - `--hide-output` - Don't show anything when pip was ran
 - `--skip-register` - Skip register a player
 
