@@ -1,6 +1,6 @@
 # Resource Pack
-**Important: The default resource pack is included in the [Minecraft-in-python/Minecraft](https://github.com/Minecraft-in-python/Minecraft) repository!**
-and is installed with the game.
+!!! info "Pay attention"
+	The default resource pack is included in the Minecraft game repository! and is installed with the game.
 
 After reading the above you may wonder, what is a resource pack?
 It is a package with elements necessary for the game to run, without it,
@@ -20,7 +20,7 @@ You can use both to be complete.
 
 Note: The default Resource Pack will always be complete.
 
-## Resource Pack (default) Installation Guide
+## Installation Guide
 Use git:
 ```bash
 # Github

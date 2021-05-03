@@ -3,11 +3,8 @@ site_name: Minecraft in python
 nav:
   - Home: index.md
   - Launcher: launcher.md
-  - Install resource: pack-res.md
   - Install game: install-game.md
-  - Game:
-    - About the world: game/world.md
-    - Control the player: game/control-player.md
+  - Resource pack: resource-pack.md
   - About:
     - Contributing: about/contributing.md
     - License: about/license.md
@@ -24,3 +21,4 @@ copyright: Copyright &copy 2020-2021 Minecraft-in-python<br>&nbsp;&nbsp;All Righ
 
 markdown_extensions:
   - admonition
+  - pymdownx.details

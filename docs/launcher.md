@@ -11,7 +11,7 @@ so that you can see new updates to the game and send us bug reports.
 ## Download
 You can download the launcher(source code) from [here](https://github.com/Minecraft-in-python/launcher).
 
-## Download and install:
+Download and install:
 ```bash
 # Github
 git clone https://github.com/Minecraft-in-python/launcher
@@ -22,8 +22,9 @@ cd launcher
 python -m launcher
 ```
 
-## Changes
-The launcher can change over time and even extraordinarily.
-I remember what it looked like before, it's changed a bit, but it's not the same.
-In the future it won't remember what it *was* today, but every change it
-makes will be for the better in quality and style.
+!!! note
+	The launcher can change over time and even extraordinarily.
+	I remember what it looked like before, it's changed a bit, but it's not the same.
+	In the future it won't remember what it *was* today, but every change it
+	makes will be for the better in quality and style.
+

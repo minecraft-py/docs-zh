@@ -7,8 +7,8 @@ Not today, not tomorrow, this game will never be finished. Today we celebrate ou
 the start of a long list of new alpha releases has begun with Minecraft v0.3.2-alpha.
 It's to be expected that a video game like this always eager authors who want their creation to be up to date,
 usable, bug-free, adapted to multiple platforms (Linux, MacOS, Windows)extensible, 
-editable (under the guidelines of the GNU GPL3), ready to be
-for those who are learning to program, accessible in many aspects. Decided to give up the idea of creating
+editable (under GPLv3), ready to be for those who are learning to program, 
+accessible in many aspects. Decided to give up the idea of creating
 an application and then leave it or just maintain it.
 
 Minecraft-in-python will be up to date to offer fun, safe, reliable, pytonic and enjoyable
@@ -47,13 +47,7 @@ our effort for this App and for this community.
 - [Gitter](https://gitter.im/Minecraft-in-python/community)
 - [Telegram](https://t.me/minecraftInPython)
 
-## Internal aspects
-
-- [About the launcher](launcher.md)
-- [About game controls](game/control-player.md)
-- [About the worlds](game/world.md)
-- [Resource Pack](pack-res.md)
-
 Also, you can vist our [home page](https://minecraft-in-python.github.io) for more information.
 
 This Documentation use CC0 License.
+

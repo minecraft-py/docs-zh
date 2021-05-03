@@ -8,7 +8,7 @@ The legal stuff or advice.
 ```text
 MIT License
 
-Copyright (c) 2020 Minecraft-in-python
+Copyright (c) 2020-2021 Minecraft-in-python
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -831,3 +831,4 @@ the library.  If this is what you want to do, use the GNU Lesser General
 Public License instead of this License.  But first, please read
 <https://www.gnu.org/licenses/why-not-lgpl.html>.
 ```
+
