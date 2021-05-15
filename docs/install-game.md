@@ -42,6 +42,7 @@ First, you must consider where copy the files. There are 2 choices below:
 
 #### Commandline arguments
 
+- `--gen-script` - Generate startup script
 - `--skip-install-requirements` - Don't install requirements
 - `--hide-output` - Don't show anything when pip runs
 - `--skip-register` - Skip register a player
