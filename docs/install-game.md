@@ -55,16 +55,18 @@ Every player has it's own id which generate by `uuid` module.
 Player name is a string at least have 2 letters(the first one must be letters or underline).
 
 ### How to play
-On terminal, type `python -m Minecraft`.
+On terminal, type `python -m minecraft`.
+
+Add `--gen-script` opinion to `install.py`.
 
 Or add this function to `~/.bashrc`:
 ```bash
 function mcpy() {
 	cd ~/Minecraft
-	python -m Minecraft $*
+	python -m minecraft $*
 	cd $OLDPWD/
 }
 # or
-alias mcpy="cd ~/Minecraft && python -m Minecraft $* && cd $OLDPWD/"
+alias mcpy="cd ~/Minecraft && python -m minecraft $* && cd $OLDPWD/"
 ```
 
