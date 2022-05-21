@@ -1,24 +1,53 @@
-site_name: Minecraft in python
-
-nav:
-  - Home: index.md
-  - Launcher: launcher.md
-  - Install game: install-game.md
-  - Resource pack: resource-pack.md
-  - About:
-    - Contributing: about/contributing.md
-    - License: about/license.md
+site_name: Documents
+copyright: Copyright &copy 2020-2022 Minecraft-in-python
 
 theme:
-  name: readthedocs
-  highlightjs: true
-  hljs_languages:
-    - bash
-    - javascript
-    - python
+    name: material
+    custom_dir: overrides
+    language: zh
+    features:
+      - navigation.expand
+      - navigation.indexes
+      - navigation.top
+      - toc.integrate
+    palette:
+      - media: "(prefers-color-scheme: light)"
+        scheme: default
+        toggle:
+          icon: material/brightness-7
+      - media: "(prefers-color-scheme: dark)"
+        scheme: slate
+        toggle:
+          icon: material/brightness-4
 
-copyright: Copyright &copy 2020-2021 Minecraft-in-python<br>&nbsp;&nbsp;All Right Reserved.
+nav:
+  - English:
+    - index.md
+  - 简体中文:
+    - zh/index.md
+    - 下载&安装: zh/download_and_install.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/minecraft-in-python
+    - icon: fontawesome/brands/gitter
+      link: https://gitter.im/Minecraft-in-python/community
+  alternate:
+    - name: English
+      link: /
+      lang: en
+    - name: 简体中文
+      link: /zh/
+      lang: zh
 
 markdown_extensions:
   - admonition
+  - footnotes
+  - meta
   - pymdownx.details
+  - pymdownx.highlight:
+      use_pygments: true
+  - pymdownx.superfences
+  - toc:
+      permalink: true
