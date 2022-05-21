@@ -1,13 +1,12 @@
 site_name: Documents
 site_url: https://minecraft-in-python.github.io/docs/
-repo_name: minecraft-in-python/minecraft
+repo_name: Minecraft-in-python/Minecraft
 repo_url: https://github.com/Minecraft-in-python/minecraft
-copyright: Copyright &copy 2020-2022 Minecraft-in-python
+copyright: Copyright &copy; 2020-2022 Minecraft-in-python
 
 theme:
     name: material
     custom_dir: overrides
-    language: zh
     icon:
       repo: fontawesome/brands/github
     features:
