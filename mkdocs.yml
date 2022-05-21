@@ -1,4 +1,7 @@
 site_name: Documents
+site_url: https://minecraft-in-python.github.io/docs/
+repo: minecraft-in-python/docs
+repo_url: https://github.com/Minecraft-in-python/docs
 copyright: Copyright &copy 2020-2022 Minecraft-in-python
 
 theme:
