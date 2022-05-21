@@ -1,7 +1,7 @@
 site_name: Documents
 site_url: https://minecraft-in-python.github.io/docs/
-repo: minecraft-in-python/docs
-repo_url: https://github.com/Minecraft-in-python/docs
+repo: minecraft-in-python/minecraft
+repo_url: https://github.com/Minecraft-in-python/minecraft
 copyright: Copyright &copy 2020-2022 Minecraft-in-python
 
 theme:
@@ -38,10 +38,10 @@ extra:
       link: https://gitter.im/Minecraft-in-python/community
   alternate:
     - name: English
-      link: /
+      link: /docs/
       lang: en
     - name: 简体中文
-      link: /zh/
+      link: /docs/zh/
       lang: zh
 
 markdown_extensions:
