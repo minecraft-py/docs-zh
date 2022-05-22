@@ -1,4 +1,4 @@
-site_name: Documents
+site_name: Minecraft in python
 site_url: https://minecraft-in-python.github.io/docs/
 repo_name: Minecraft-in-python/Minecraft
 repo_url: https://github.com/Minecraft-in-python/minecraft
@@ -27,6 +27,7 @@ theme:
 nav:
   - English:
     - index.md
+    - Download & Install: download_and_install.md
   - 简体中文:
     - zh/index.md
     - 下载&安装: zh/download_and_install.md
