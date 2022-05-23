@@ -16,4 +16,3 @@
 3. 如有必要，应该更新`mkdocs.yml`文件
 4. 运行`mkdocs serve`，打开浏览器查看效果
 5. 开启一个Pull Request，我们会尽快受理
-
