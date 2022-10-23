@@ -1,0 +1,10 @@
+[book]
+authors = ["jason-bowen-zheng"]
+language = "zh"
+multilingual = false
+src = "src"
+title = "中文文档"
+
+[output.html]
+curly-quotes = true
+mathjax-support = false
