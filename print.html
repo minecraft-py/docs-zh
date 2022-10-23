@@ -3,7 +3,8 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>总起 - 中文文档</title>
+        <title>中文文档</title>
+        <meta name="robots" content="noindex" />
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -75,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html" class="active">总起</a></li><li class="chapter-item expanded affix "><li class="part-title">开始之前</li><li class="chapter-item expanded "><a href="before_play/download_and_install.html"><strong aria-hidden="true">1.</strong> 下载&安装</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> 配置服务器</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> 使用模组</div></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">总起</a></li><li class="chapter-item expanded affix "><li class="part-title">开始之前</li><li class="chapter-item expanded "><a href="before_play/download_and_install.html"><strong aria-hidden="true">1.</strong> 下载&安装</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> 配置服务器</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> 使用模组</div></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -146,23 +147,44 @@
 </ul>
 <p>我们欢迎您为该文档做出贡献，或者把它翻译到另一门语言。</p>
 <p>那么，开始阅读吧！</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="下载安装"><a class="header" href="#下载安装">下载&amp;安装</a></h1>
+<p>首先，阁下可以在<a href="https://github.com/Minecraft-in-python/Minecraft">这里</a>获取游戏的全部源代码，使用<code>git clone</code>或者直接<a href="https://github.com/Minecraft-in-python/Minecraft/archive/refs/heads/master.zip">下载zip文件</a>都是可以的。</p>
+<p>在开始下一步之前，您应先确保计算机上有python3.8或更高版本并且安装有pip包管理程序。</p>
+<p>在源代码目录下，有名为<code>install.py</code>的程序，运行之即可完成依赖项的安装及生成游戏运行所必要的数据（如玩家的数据）。</p>
+<p>步骤如下：</p>
+<ol>
+<li>安装依赖项</li>
+<li>在本地注册玩家</li>
+<li>生成启动脚本
+<blockquote>
+<p>在Windows上为<code>run.bat</code>，其余为<code>run.sh</code>，且具有执行权限。</p>
+</blockquote>
+</li>
+</ol>
+<p>同时，亦有命令行参数可以跳过这些步骤：</p>
+<ul>
+<li><code>--skip-install-requirements</code>—跳过安装依赖项</li>
+<li><code>--skip-register</code>—跳过玩家注册</li>
+<li><code>--skip-gen-script</code>—跳过生成启动脚本</li>
+</ul>
+<p>这些对于启动器来说应该很有用吧。</p>
+<h2 id="一些数据迁移的细节"><a class="header" href="#一些数据迁移的细节">一些数据迁移的细节</a></h2>
+<p>我们会时不时地改变一些数据的存储结构，下面简述了安装程序处理过时数据的细节，以供参考。</p>
+<p>对于游戏设置（<code>settings.json</code>）而言，我们有一个当前版本的默认设置，在本地游戏设置不存在该设置项（json中的键）<strong>或者</strong>该设置项与默认设置的数据类型不统一时会被替换。</p>
+<p>而玩家数据（<code>player.json</code>）的处理则较为复杂，是因为每个玩家使用固定的uuid表示他的身份，改变这个uuid则其游玩数据会全部无效。</p>
+<p>程序会先检查数据是否符合游戏要求，如若符合则不做变动。</p>
+<p>否则在<strong>纯文本</strong>的玩家数据中匹配<strong>带引号</strong>的uuid，而非使用自动生成的。</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="next" href="before_play/download_and_install.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="next" href="before_play/download_and_install.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
             </nav>
 
         </div>
@@ -178,5 +200,10 @@
         <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
     </body>
 </html>
