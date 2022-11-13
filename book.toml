@@ -8,7 +8,7 @@ title = "中文文档"
 [output.html]
 curly-quotes = true
 mathjax-support = false
-additional-js = ["src/js/mermaid.min.js", "src/js/mermaid-init.js"]
+additional-js = ["js/mermaid.min.js", "js/mermaid-init.js"]
 
 [preprocessor]
 
