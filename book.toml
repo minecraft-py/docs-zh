@@ -8,9 +8,3 @@ title = "中文文档"
 [output.html]
 curly-quotes = true
 mathjax-support = false
-additional-js = ["js/mermaid.min.js", "js/mermaid-init.js"]
-
-[preprocessor]
-
-[preprocessor.mermaid]
-command = "mdbook-mermaid"

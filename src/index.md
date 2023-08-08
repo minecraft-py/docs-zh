@@ -1,5 +1,5 @@
 # 游戏的中文文档
-欢迎阅读Minecraft-in-python的官方中文文档。
+欢迎阅读Minecraftpy的官方中文文档。
 
 这个文档主要讲述的是游戏的基本内容，而非特性，那是[Minecraft wiki](https://minecraft.fandom.com/zh/wiki/Minecraft_Wiki)干的事。当然，也会涉及一些实现细节。
 

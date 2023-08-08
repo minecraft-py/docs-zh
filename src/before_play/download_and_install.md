@@ -1,32 +1,23 @@
 # 下载&安装
-首先，阁下可以在[这里](https://github.com/Minecraft-in-python/Minecraft)获取游戏的全部源代码，使用`git clone`或者直接[下载zip文件](https://github.com/Minecraft-in-python/Minecraft/archive/refs/heads/master.zip)都是可以的。
+通常情况下，游戏启动器会自动完成这个步骤，您只需指定一些参数。
 
-在开始下一步之前，您应先确保计算机上有python3.8或更高版本并且安装有pip包管理程序。
+这一节讲述的是如何手动下载并安装游戏至启动器。
 
-在源代码目录下，有名为`install.py`的程序，运行之即可完成依赖项的安装及生成游戏运行所必要的数据（如玩家的数据）。
+阁下可以在[这里](https://github.com/minecraft-py/minecraft)获取游戏的全部源代码，使用`git clone`或者直接下载[压缩文件](https://github.com/Minecraft-py/minecraft/archive/refs/heads/master.zip)。
 
-步骤如下：
+在开始下一步之前，您应先确保计算机上有 Python3.8 或更高版本并且安装有 pip 包管理程序。
 
-1. 安装依赖项
-2. 在本地注册玩家
-3. 生成启动脚本
-   > 在Windows上为`run.bat`，其余为`run.sh`，且具有执行权限。
+游戏使用了很多依赖项，并且游戏的不同版本可能需要不同版本的依赖项，必须让不同版本的游戏运行在不同的虚拟环境内。使用 Python 自带的`venv`就可以做到这一点。
+> 这里不过多赘述虚拟环境的用法，查看[标准库中 venv 的介绍](https://docs.python.org/zh-cn/3.8/library/venv.html)以了解如何创建及激活虚拟环境。
 
-同时，亦有命令行参数可以跳过这些步骤：
+确保在游戏源代码目录创建并激活了虚拟环境后，可输入以下命令来安装所有依赖项：
+```bash
+pip install -r requirements.txt
+```
 
-- `--skip-install-requirements`---跳过安装依赖项
-- `--skip-register`---跳过玩家注册
-- `--skip-gen-script`---跳过生成启动脚本
+若上述命令没有出错，您便可以输入下面的命令来直接启动游戏：
+```bash
+python3 - m minecraft
+```
 
-这些对于启动器来说应该很有用吧。
-
-## 一些数据迁移的细节
-我们会时不时地改变一些数据的存储结构，下面简述了安装程序处理过时数据的细节，以供参考。
-
-对于游戏设置（`settings.json`）而言，我们有一个当前版本的默认设置，在本地游戏设置不存在该设置项（json中的键）**或者**该设置项与默认设置的数据类型不统一时会被替换。
-
-而玩家数据（`player.json`）的处理则较为复杂，是因为每个玩家使用固定的uuid表示他的身份，改变这个uuid则其游玩数据会全部无效。
-
-程序会先检查数据是否符合游戏要求，如若符合则不做变动。
-
-否则在**纯文本**的玩家数据中匹配**带引号**的uuid，而非使用自动生成的。
+可见，您并不需要安装即可游玩这个游戏。

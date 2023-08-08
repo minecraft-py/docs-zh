@@ -12,7 +12,6 @@ jobs:
         with:
           toolchain: stable
       - run: (test -x $HOME/.cargo/bin/mdbook || cargo install mdbook)
-      - run: (test -x $HOME/.cargo/bin/mdbook-mermaid || cargo install mdbook-mermaid)
       - run: mdbook build && mdbook test
       - uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
