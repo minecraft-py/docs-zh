@@ -9,7 +9,6 @@
 
         <!-- Custom HTML head -->
         
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
@@ -34,14 +33,15 @@
 
     </head>
     <body>
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -57,7 +57,7 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
@@ -69,12 +69,14 @@
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
+        <script>
             var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var sidebar = null;
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
@@ -82,16 +84,38 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">总起</a></li><li class="chapter-item expanded affix "><li class="part-title">开始之前</li><li class="chapter-item expanded "><a href="before_play/download_and_install.html"><strong aria-hidden="true">1.</strong> 下载&安装</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> 配置服务器</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> 使用模组</div></li><li class="chapter-item expanded affix "><li class="part-title">致开发者</li><li class="chapter-item expanded "><a href="for_developer/usage_of_scene.html"><strong aria-hidden="true">4.</strong> 场景的应用</a></li><li class="chapter-item expanded affix "><li class="part-title">做出贡献</li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> 翻译文档</div></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">总起</a></li><li class="chapter-item expanded affix "><li class="part-title">开始之前</li><li class="chapter-item expanded "><a href="before_play/download_and_install.html"><strong aria-hidden="true">1.</strong> 下载&安装</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> 配置服务器</div></li><li class="chapter-item expanded affix "><li class="part-title">致开发者</li><li class="chapter-item expanded "><a href="for_developer/usage_of_scene.html"><strong aria-hidden="true">3.</strong> 场景的应用</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> 使用小部件</div></li><li class="chapter-item expanded affix "><li class="part-title">做出贡献</li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> 翻译文档</div></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
                                 <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
@@ -100,7 +124,7 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
@@ -133,7 +157,7 @@
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -144,7 +168,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="游戏的中文文档"><a class="header" href="#游戏的中文文档">游戏的中文文档</a></h1>
-<p>欢迎阅读Minecraft-in-python的官方中文文档。</p>
+<p>欢迎阅读Minecraftpy的官方中文文档。</p>
 <p>这个文档主要讲述的是游戏的基本内容，而非特性，那是<a href="https://minecraft.fandom.com/zh/wiki/Minecraft_Wiki">Minecraft wiki</a>干的事。当然，也会涉及一些实现细节。</p>
 <p>中文文档被分成了如下4个部分：</p>
 <ul>
@@ -156,66 +180,67 @@
 <p>我们欢迎您为该文档做出贡献，或者把它翻译到另一门语言。</p>
 <p>那么，开始阅读吧！</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="下载安装"><a class="header" href="#下载安装">下载&amp;安装</a></h1>
-<p>首先，阁下可以在<a href="https://github.com/Minecraft-in-python/Minecraft">这里</a>获取游戏的全部源代码，使用<code>git clone</code>或者直接<a href="https://github.com/Minecraft-in-python/Minecraft/archive/refs/heads/master.zip">下载zip文件</a>都是可以的。</p>
-<p>在开始下一步之前，您应先确保计算机上有python3.8或更高版本并且安装有pip包管理程序。</p>
-<p>在源代码目录下，有名为<code>install.py</code>的程序，运行之即可完成依赖项的安装及生成游戏运行所必要的数据（如玩家的数据）。</p>
-<p>步骤如下：</p>
-<ol>
-<li>安装依赖项</li>
-<li>在本地注册玩家</li>
-<li>生成启动脚本
+<p>通常情况下，游戏启动器会自动完成这个步骤，您只需指定一些参数。</p>
+<p>这一节讲述的是如何手动下载并安装游戏至启动器。</p>
+<p>阁下可以在<a href="https://github.com/minecraft-py/minecraft">这里</a>获取游戏的全部源代码，使用<code>git clone</code>或者直接下载<a href="https://github.com/Minecraft-py/minecraft/archive/refs/heads/master.zip">压缩文件</a>。</p>
+<p>在开始下一步之前，您应先确保计算机上有 Python3.8 或更高版本并且安装有 pip 包管理程序。</p>
+<p>游戏使用了很多依赖项，并且游戏的不同版本可能需要不同版本的依赖项，必须让不同版本的游戏运行在不同的虚拟环境内。使用 Python 自带的<code>venv</code>就可以做到这一点。</p>
 <blockquote>
-<p>在Windows上为<code>run.bat</code>，其余为<code>run.sh</code>，且具有执行权限。</p>
+<p>这里不过多赘述虚拟环境的用法，查看<a href="https://docs.python.org/zh-cn/3.8/library/venv.html">标准库中 venv 的介绍</a>以了解如何创建及激活虚拟环境。</p>
 </blockquote>
-</li>
-</ol>
-<p>同时，亦有命令行参数可以跳过这些步骤：</p>
-<ul>
-<li><code>--skip-install-requirements</code>—跳过安装依赖项</li>
-<li><code>--skip-register</code>—跳过玩家注册</li>
-<li><code>--skip-gen-script</code>—跳过生成启动脚本</li>
-</ul>
-<p>这些对于启动器来说应该很有用吧。</p>
-<h2 id="一些数据迁移的细节"><a class="header" href="#一些数据迁移的细节">一些数据迁移的细节</a></h2>
-<p>我们会时不时地改变一些数据的存储结构，下面简述了安装程序处理过时数据的细节，以供参考。</p>
-<p>对于游戏设置（<code>settings.json</code>）而言，我们有一个当前版本的默认设置，在本地游戏设置不存在该设置项（json中的键）<strong>或者</strong>该设置项与默认设置的数据类型不统一时会被替换。</p>
-<p>而玩家数据（<code>player.json</code>）的处理则较为复杂，是因为每个玩家使用固定的uuid表示他的身份，改变这个uuid则其游玩数据会全部无效。</p>
-<p>程序会先检查数据是否符合游戏要求，如若符合则不做变动。</p>
-<p>否则在<strong>纯文本</strong>的玩家数据中匹配<strong>带引号</strong>的uuid，而非使用自动生成的。</p>
+<p>确保在游戏源代码目录创建并激活了虚拟环境后，可输入以下命令来安装所有依赖项：</p>
+<pre><code class="language-bash">pip install -r requirements.txt
+</code></pre>
+<p>若上述命令没有出错，您便可以输入下面的命令来直接启动游戏：</p>
+<pre><code class="language-bash">python3 - m minecraft
+</code></pre>
+<p>可见，您并不需要安装即可游玩这个游戏。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="场景的应用"><a class="header" href="#场景的应用">场景的应用</a></h1>
-<p>游戏有着一堆界面，什么开始界面、创建存档的界面、设置参数的界面等等，然后才是实际游玩的界面。</p>
+<p>游戏有着一堆界面，例如开始界面、创建存档的界面、设置参数的界面等等，然后才是实际游玩的界面。</p>
 <p>为了方便实现这些功能而不是使用一堆<code>if</code>，场景（Scene）就这样诞生了。</p>
 <p>当然，该游戏也同样实现了场景这一功能，还是挺简单的说。</p>
 <h2 id="使用场景"><a class="header" href="#使用场景">使用场景</a></h2>
 <p>欲使用场景，应先导入之：</p>
-<pre><code class="language-python">from minecraft.scene import Scene
+<pre><code class="language-python">from minecraft.scenes import Scene
 from minecraft.utils.utils import *
 </code></pre>
-<p>场景继承自<a href="https://pyglet.readthedocs.io/en/latest/modules/event.html#pyglet.event.EventDispatcher">pyglet.event.EventDispatcher</a>，这里不多赘述，可点击链接查看文档。</p>
-<p>同时，场景有两个回调函数：</p>
+<p>场景继承自<a href="https://pyglet.readthedocs.io/en/latest/modules/event.html#pyglet.event.EventDispatcher"><code>EventDispatcher</code></a>，这里不多赘述，可点击链接查看文档。</p>
+<p>同时，场景有3个回调函数：</p>
 <ul>
-<li><code>Scene.on_scene_enter(self)</code>—进入场景时调用</li>
-<li><code>Scene.on_scene_leave(self)</code>—离开场景时调用</li>
+<li><code>Scene.on_scene_enter()</code>—进入场景时调用</li>
+<li><code>Scene.on_scene_leave()</code>—离开场景时调用</li>
+<li><code>Scene.on_language_change()</code>—在改变语言时调用</li>
 </ul>
 <p>创建好新的场景类后，需要把它的实例添加到一个字典（私有的）中才能访问。</p>
 <p>添加并切换至一个名为<code>MyScene</code>的代码如下所示：</p>
 <pre><code class="language-python">class MyScene(Scene):
     pass
 
-get_game().add_scene(&quot;ext:my_scene&quot;, MyScene)
-get_game().switch_scene(&quot;ext:my_scene&quot;)
+get_game_window_instance().add_scene(&quot;ext:my_scene&quot;, MyScene)
+get_game_window_instance().switch_scene(&quot;ext:my_scene&quot;)
 </code></pre>
+<blockquote>
+<p>我们并不赞成使用<code>get_game_window_instance()</code>获取游戏窗口的实例，您应该使用其它方法来达到相同的目的。</p>
+</blockquote>
 <p>同时，<code>add_scene</code>也可传入若干关键字参数和位置参数用于实例化类。</p>
 <blockquote>
 <p>虽然程序对名称中是否添加主命名空间（这里是<code>ext</code>）没有硬性要求，但一直这样做是一个好习惯。</p>
 </blockquote>
+<h3 id="使用-guiframe"><a class="header" href="#使用-guiframe">使用 GUIFrame</a></h3>
+<p><code>Scene.frame</code>为一个<code>GUIFrame</code><sup class="footnote-reference"><a href="#1">1</a></sup>对象，监听各种事件并反应到小部件上。</p>
+<p>需要注意的是，游戏会在进入或离开场景时强制启用或禁用<code>Scene.frame</code>（通过<code>enable</code>属性）。</p>
+<p>关于小部件的详细描述，请转到<a href="for_developer/">使用小部件</a>一节。</p>
 <h2 id="已有的场景"><a class="header" href="#已有的场景">已有的场景</a></h2>
-<p>以下列出了游戏原版中所拥有的场景：</p>
+<p>以下列出了原版游戏中所拥有的场景：</p>
 <ul>
 <li><code>minecraft:start</code>—标题页面</li>
-<li><code>minecraft:single_player</code>—单人游戏的选择存档的场景</li>
+<li><code>minecraft:singleplayer</code>—单人游戏的选择存档的场景</li>
 </ul>
-<p>它们的代码都包含在<a href="https://github.com/Minecraft-in-python/Minecraft/tree/master/minecraft/scene">minecraft/scene</a>目录中，可随时查看。</p>
+<p>它们的代码都包含在 <a href="https://github.com/minecraft-py/minecraft/tree/master/minecraft/scenes">minecraft/scenes</a> 目录中，可随时查看。</p>
+<hr />
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>完整的命名空间为<code>minecraft.gui.frame.GUIFrame</code>，该类重写于<code>pyglet.gui.frame.Frame</code>。</p>
+</div>
 
                     </main>
 
@@ -237,28 +262,27 @@ get_game().switch_scene(&quot;ext:my_scene&quot;)
 
 
 
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
 
 
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
-        <script type="text/javascript" src="js/mermaid.min.js"></script>
-        <script type="text/javascript" src="js/mermaid-init.js"></script>
 
-        <script type="text/javascript">
+        <script>
         window.addEventListener('load', function() {
             window.setTimeout(window.print, 100);
         });
         </script>
 
+    </div>
     </body>
 </html>
