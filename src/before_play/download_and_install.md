@@ -1,9 +1,10 @@
 # 下载&安装
+
 通常情况下，游戏启动器会自动完成这个步骤，您只需指定一些参数。
 
 这一节讲述的是如何手动下载并安装游戏至启动器。
 
-阁下可以在[这里](https://github.com/minecraft-py/minecraft)获取游戏的全部源代码，使用`git clone`或者直接下载[压缩文件](https://github.com/Minecraft-py/minecraft/archive/refs/heads/master.zip)。
+你可以在[这里](https://github.com/minecraft-py/minecraft)获取游戏的全部源代码，使用`git clone`或者直接下载[压缩文件](https://github.com/Minecraft-py/minecraft/archive/refs/heads/master.zip)。
 
 在开始下一步之前，您应先确保计算机上有 Python3.8 或更高版本并且安装有 pip 包管理程序。
 
@@ -17,7 +18,7 @@ pip install -r requirements.txt
 
 若上述命令没有出错，您便可以输入下面的命令来直接启动游戏：
 ```bash
-python3 - m minecraft
+python3 -m minecraft
 ```
 
-可见，您并不需要安装即可游玩这个游戏。
+<!-- 可见，您并不需要安装即可游玩这个游戏。 -->
